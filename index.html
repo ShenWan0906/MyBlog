@@ -13,23 +13,69 @@
     />
 
     <style>
-      /* 1. 修改侧边栏宽度，从默认的 300px 增加到 350px 或更多 */
+      /* 1. 进一步增加侧边栏宽度 */
       :root {
-        --sidebar-width: 350px;
+        --sidebar-width: 450px;
       }
 
-      /* 2. 解决标题过长被截断的问题，允许文字自动换行 */
+      /* 2. 搜索框美化 */
+      .search {
+        padding: 20px 20px 10px 20px !important;
+        border-bottom: none !important;
+      }
+
+      .search input {
+        border-radius: 24px !important;
+        background: #f5f6f7 !important;
+        border: 1px solid #e1e4e8 !important;
+        padding: 12px 18px 12px 35px !important; /* 预留图标空间 */
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        outline: none;
+      }
+
+      /* 搜索框激活状态 */
+      .search input:focus {
+        background: #fff !important;
+        border-color: #42b983 !important;
+        box-shadow: 0 4px 12px rgba(66, 185, 131, 0.15) !important;
+        width: 95% !important;
+      }
+
+      /* 搜索结果面板优化 */
+      .search .results-panel.show {
+        padding: 10px !important;
+        border-radius: 8px !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+      }
+
+      /* 3. 侧边栏长标题换行与间距优化 */
       .sidebar ul li a {
-        white-space: normal !important; /* 允许换行 */
-        line-height: 1.5; /* 增加行高，防止换行后文字太挤 */
-        padding: 8px 15px; /* 稍微调整边距 */
+        white-space: normal !important; /* 强制换行 */
+        line-height: 1.6 !important; /* 舒适的行高 */
+        padding: 10px 20px !important; /* 点击区域加宽 */
         display: block;
+        word-break: break-all; /* 确保长英文单词也能折行 */
+        font-size: 14px;
+        color: #454d5d;
       }
 
-      /* 3. 增强视觉引导：悬停时显示完整背景 */
+      /* 悬停效果 */
       .sidebar-nav li > a:hover {
-        background-color: rgba(66, 185, 131, 0.1);
-        border-radius: 4px;
+        color: #42b983 !important;
+        background-color: rgba(66, 185, 131, 0.05);
+        font-weight: 500;
+      }
+
+      /* 当前选中文章的高亮样式 */
+      .sidebar-nav li.active > a {
+        border-right: 3px solid #42b983;
+        font-weight: bold;
+        color: #42b983 !important;
+      }
+
+      /* 4. 隐藏搜索框自带的清空按钮（可选，为了视觉更整洁） */
+      .search .clear-button {
+        right: 25px !important;
       }
     </style>
   </head>
