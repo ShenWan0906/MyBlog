@@ -90,12 +90,16 @@
         auto2top: true,
         // 搜索插件配置
         search: {
-          maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+          maxAge: 86400000,
           paths: "auto",
-          placeholder: "搜索面试真题、交付实战、敏捷经验...",
-          noData: "未找到相关文章，换个关键词试试？",
-          depth: 6,
-          hideOtherSidebarContent: false, // 是否隐藏侧边栏其他内容
+          placeholder: "搜索...",
+          noData: "未找到",
+          // 将 depth 从 6 改为 2，只索引大标题，大幅降低计算量
+          depth: 2,
+          // 开启这个选项，可以避免在侧边栏渲染过多无关紧要的搜索结果
+          hideOtherSidebarContent: true,
+          // 增加路径跨度
+          namespace: "my-blog",
         },
       };
     </script>
