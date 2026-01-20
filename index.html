@@ -11,6 +11,27 @@
       rel="stylesheet"
       href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css"
     />
+
+    <style>
+      /* 1. 修改侧边栏宽度，从默认的 300px 增加到 350px 或更多 */
+      :root {
+        --sidebar-width: 350px;
+      }
+
+      /* 2. 解决标题过长被截断的问题，允许文字自动换行 */
+      .sidebar ul li a {
+        white-space: normal !important; /* 允许换行 */
+        line-height: 1.5; /* 增加行高，防止换行后文字太挤 */
+        padding: 8px 15px; /* 稍微调整边距 */
+        display: block;
+      }
+
+      /* 3. 增强视觉引导：悬停时显示完整背景 */
+      .sidebar-nav li > a:hover {
+        background-color: rgba(66, 185, 131, 0.1);
+        border-radius: 4px;
+      }
+    </style>
   </head>
   <body>
     <div id="app"></div>
