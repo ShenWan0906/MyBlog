@@ -1,24 +1,39 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <title>我的技术博客</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
-</head>
-<body>
-  <div id="app"></div>
-  <script>
-    window.$docsify = {
-      name: '技术沉淀',
-      repo: '', // 如果有Github地址可以填在这里
-      loadSidebar: true,
-      subMaxLevel: 2,
-      auto2top: true
-    }
-  </script>
-  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>项目经理的浮生绘记</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
+    />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css"
+    />
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      window.$docsify = {
+        name: "项目经理的浮生绘记",
+        repo: "https://github.com/ShenWan0906/MyBlog", // 关联你的仓库
+        loadSidebar: true,
+        subMaxLevel: 3,
+        auto2top: true,
+        // 搜索插件配置
+        search: {
+          maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+          paths: "auto",
+          placeholder: "搜索面试真题、交付实战、敏捷经验...",
+          noData: "未找到相关文章，换个关键词试试？",
+          depth: 6,
+          hideOtherSidebarContent: false, // 是否隐藏侧边栏其他内容
+        },
+      };
+    </script>
+    <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+  </body>
 </html>
