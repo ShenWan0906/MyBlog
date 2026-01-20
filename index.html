@@ -11,6 +11,10 @@
       rel="stylesheet"
       href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css"
     />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css"
+    />
 
     <style>
       /* 1. 进一步增加侧边栏宽度 */
@@ -59,18 +63,21 @@
         color: #454d5d;
       }
 
-      /* 悬停效果 */
-      .sidebar-nav li > a:hover {
-        color: #42b983 !important;
-        background-color: rgba(66, 185, 131, 0.05);
-        font-weight: 500;
+      /* 适配折叠插件的样式微调 */
+      .sidebar-nav .folder {
+        cursor: pointer;
+        transition: all 0.3s;
       }
 
-      /* 当前选中文章的高亮样式 */
-      .sidebar-nav li.active > a {
-        border-right: 3px solid #42b983;
-        font-weight: bold;
-        color: #42b983 !important;
+      /* 调整分类标题前的箭头间距 */
+      .sidebar-nav li > p::after {
+        margin-top: 12px !important;
+      }
+
+      /* 确保展开时的文字不会太挤 */
+      .sidebar-nav ul li ul {
+        padding-left: 20px !important;
+        margin-top: 5px !important;
       }
 
       /* 4. 隐藏搜索框自带的清空按钮（可选，为了视觉更整洁） */
@@ -88,6 +95,7 @@
         loadSidebar: true,
         subMaxLevel: 3,
         auto2top: true,
+        sidebarDisplayLevel: 1, // 设置默认展开级别。1 代表只显示分类名，不显示具体文章
         // 搜索插件配置
         search: {
           maxAge: 86400000,
@@ -106,5 +114,6 @@
     <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
   </body>
 </html>
