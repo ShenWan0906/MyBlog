@@ -8,7 +8,7 @@
 
 ### 🚀 快速访问
 
-**个人主页：shenwan.life**
+**在线阅读地址：https://shenwan0906.github.io/MyBlog/**
 
 ------
 
